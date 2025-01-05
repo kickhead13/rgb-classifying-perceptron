@@ -5,10 +5,10 @@ pub const Label = enum {
     green,
     blue,
 
-    pub fn format(label: Label) *const [1:0]u8 {
-        if (label == Label.red) return "0";
-        if (label == Label.green) return "1";
-        return "2";
+    pub fn format(label: Label) *const [7:0]u8 {
+        if (label == Label.red) return "1, 0, 0";
+        if (label == Label.green) return "0, 1, 0";
+        return "0, 0, 1";
     }
 };
 

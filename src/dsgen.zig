@@ -7,10 +7,10 @@ pub fn main() !void {
 
     const stdout = std.io.getStdOut().writer();
     var data = dstruct.Data.new();
-    comptime var iterator = 0;
+    var iterator: u32 = 0;
 
     try stdout.print("{{", .{});
-    inline while (iterator < 600) : (iterator += 1) {
+    while (iterator < 2000) : (iterator += 1) {
         try stdout.print(".{{ {d}, {d}, {d}, {s} }},\n ", .{ conv.convert(data.r), conv.convert(data.g), conv.convert(data.b), data.label.format() });
         data = dstruct.Data.new();
     }
