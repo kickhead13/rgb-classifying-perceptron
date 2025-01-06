@@ -10,7 +10,7 @@ pub fn main() !void {
     var iterator: u32 = 0;
 
     try stdout.print("{{", .{});
-    while (iterator < 2000) : (iterator += 1) {
+    while (iterator < 10000) : (iterator += 1) {
         try stdout.print(".{{ {d}, {d}, {d}, {s} }},\n ", .{ conv.convert(data.r), conv.convert(data.g), conv.convert(data.b), data.label.format() });
         data = dstruct.Data.new();
     }
